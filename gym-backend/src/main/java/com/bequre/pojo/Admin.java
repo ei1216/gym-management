@@ -1,15 +1,19 @@
 package com.bequre.pojo;
 
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Data;
 import java.time.LocalDate;
 
 
 @Schema(description = "管理员实体")
 @Data
+@Builder
+@TableName("admins")
 public class Admin {
 
     @NotNull

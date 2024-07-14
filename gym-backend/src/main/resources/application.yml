@@ -26,10 +26,6 @@ mybatis-plus:     #直接配置mybatisplus，不会影响mybatis的使用
 
 # 接口文档
 springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-    tags-sorter: alpha
-    operations-sorter: alpha
   api-docs:
     path: /v3/api-docs
   group-configs:

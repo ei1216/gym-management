@@ -1,17 +1,24 @@
 package com.bequre.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
 
 @Data
 @Schema(description = "私教实体")
+@TableName("coaches")
+@Builder
 public class Coach {
 
     @NotNull
     @Schema(name = "id", description = "ID")
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     @Schema(name = "name", description = "姓名")

@@ -24,7 +24,7 @@ public class CoachController {
 
     @Operation(summary = "新增私教")
     @PostMapping
-    public Result add(@RequestBody Coach coach) {
+    public Result save(@RequestBody Coach coach) {
         coach.setJoinDate(LocalDate.now());
         coachService.save(coach);
         return Result.success();

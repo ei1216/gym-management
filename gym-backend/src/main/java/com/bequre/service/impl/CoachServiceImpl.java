@@ -33,6 +33,6 @@ public class CoachServiceImpl extends ServiceImpl<CoachMapper, Coach> implements
                 .page(p);
 
         //3. 封装分页结果
-        return new PageDTO<>(p.getTotal(),p.getPages(),p.getRecords());
+        return new PageDTO<>(page.getTotal(),page.getPages(),page.getRecords());
     }
 }

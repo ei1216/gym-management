@@ -1,6 +1,8 @@
 package com.bequre.pojo;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -13,6 +15,7 @@ public class Equipment {
 
     @NotNull
     @Schema(name = "id", description = "ID")
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     @NotNull
@@ -25,11 +28,11 @@ public class Equipment {
 
     @NotNull
     @Schema(name = "status", description = "状态")
-    private Integer status;
+    private String status;
 
     @NotNull
-    @Schema(name = "purchasedDate", description = "购买日期")
-    private LocalDate purchasedDate;
+    @Schema(name = "updateDate", description = "更新日期")
+    private LocalDate updateDate;
 
     @NotNull
     @Schema(name = "notes", description = "备注")

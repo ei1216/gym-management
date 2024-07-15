@@ -1,6 +1,9 @@
 package com.bequre.pojo;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -9,10 +12,12 @@ import java.time.LocalDate;
 
 @Data
 @Schema (description = "课程报名实体")
-public class Course_Registration {
+@TableName("course_registrations")
+public class CourseRegistrations {
 
     @NotNull
     @Schema(name = "id", description = "ID")
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     @NotNull
@@ -27,8 +32,5 @@ public class Course_Registration {
     @Schema(name = "registrationDate", description = "会员注册课程日期")
     private LocalDate registrationDate;
 
-    @NotNull
-    @Schema(name = "status", description = "注册状态")
-    private String status;
 
 }

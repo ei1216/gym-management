@@ -1,6 +1,7 @@
 package com.bequre.pojo;
 
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 
 @Data
 @Schema(description = "课程实体")
+@TableName("courses")
 public class Course {
 
     @NotNull
@@ -41,7 +43,7 @@ public class Course {
 
     @NotNull
     @Schema(name = "price", description = "价格")
-    private Integer price;
+    private Float price;
 
 
 

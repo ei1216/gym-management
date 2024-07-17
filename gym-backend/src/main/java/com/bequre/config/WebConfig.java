@@ -24,9 +24,7 @@ public class WebConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry
-                .addInterceptor(requestInterceptor)
-                //.excludePathPatterns(patterns);       //knife4j接口文档的URL路径，不然无法访问接口文档
+        registry.addInterceptor(requestInterceptor)
                 .excludePathPatterns("/admin/login", "/admin/register");
     }
 }

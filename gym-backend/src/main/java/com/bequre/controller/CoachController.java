@@ -12,6 +12,7 @@ import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Tag(name = "私教管理")
@@ -21,6 +22,13 @@ import java.time.LocalDate;
 public class CoachController {
 
     private final CoachService coachService;
+
+    @Operation(summary = "获取私教列表")
+    @GetMapping
+    public Result<List<Coach>> list() {
+        return Result.success(coachService.list());
+    }
+
 
     @Operation(summary = "新增私教")
     @PostMapping

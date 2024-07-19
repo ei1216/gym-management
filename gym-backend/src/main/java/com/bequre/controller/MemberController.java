@@ -1,9 +1,6 @@
 package com.bequre.controller;
 
-import com.bequre.pojo.Equipment;
-import com.bequre.pojo.Member;
-import com.bequre.pojo.PageDTO;
-import com.bequre.pojo.Result;
+import com.bequre.pojo.*;
 import com.bequre.pojo.query.EquipmentQuery;
 import com.bequre.pojo.query.MemberQuery;
 import com.bequre.service.MemberService;
@@ -14,6 +11,7 @@ import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Tag(name = "会员管理")
 @RestController
@@ -22,6 +20,12 @@ import java.time.LocalDate;
 public class MemberController {
 
     private final MemberService memberService;
+
+    @Operation(summary = "获取会员列表")
+    @GetMapping
+    public Result<List<Member>> list() {
+        return Result.success(memberService.list());
+    }
 
     @Operation(summary = "新增会员")
     @PostMapping

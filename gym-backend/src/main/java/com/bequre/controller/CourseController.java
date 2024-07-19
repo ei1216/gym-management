@@ -1,10 +1,7 @@
 package com.bequre.controller;
 
 
-import com.bequre.pojo.Course;
-import com.bequre.pojo.Member;
-import com.bequre.pojo.PageDTO;
-import com.bequre.pojo.Result;
+import com.bequre.pojo.*;
 import com.bequre.pojo.query.CourseQuery;
 import com.bequre.service.CourseService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -12,6 +9,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @Tag(name = "课程管理")
@@ -22,6 +21,11 @@ public class CourseController {
 
     private final CourseService courseService;
 
+    @Operation(summary = "获取课程列表")
+    @GetMapping
+    public Result<List<Course>> list() {
+        return Result.success(courseService.list());
+    }
 
     @Operation(summary = "新增课程")
     @PostMapping

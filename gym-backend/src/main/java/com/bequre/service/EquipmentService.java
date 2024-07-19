@@ -21,9 +21,5 @@ public interface EquipmentService extends IService<Equipment> {
      */
     Equipment getByName(String name);
 
-    /**
-     *  增加器材数量
-     * @param equipment
-     */
-    void addQuantity(Equipment equipment);
+
 }

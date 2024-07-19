@@ -47,18 +47,6 @@ public class EquipmentServiceImpl extends ServiceImpl<EquipmentMapper, Equipment
                 .one();
     }
 
-    /**
-     *  增加器材数量
-     * @param equipment
-     */
-    public void addQuantity(Equipment equipment) {
-        Equipment e = getByName(equipment.getName());
-        lambdaUpdate()
-                .set(Equipment::getQuantity, e.getQuantity() + equipment.getQuantity())
-                .eq(Equipment::getName, equipment.getName())
-                .update();
-
-    }
 
 
 }

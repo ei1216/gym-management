@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Data
 @Schema (description = "课程报名实体")
 @TableName("course_registrations")
-public class CourseRegistrations {
+public class CourseRegistration {
 
     @NotNull
     @Schema(name = "id", description = "ID")
@@ -25,8 +25,16 @@ public class CourseRegistrations {
     private Integer memberId;
 
     @NotNull
+    @Schema(name = "memberName", description = "会员姓名")
+    private String memberName;
+
+    @NotNull
     @Schema(name = "courseId", description = "课程id")
     private Integer courseId;
+
+    @NotNull
+    @Schema(name = "courseName", description = "课程名称")
+    private String courseName;
 
     @NotNull
     @Schema(name = "registrationDate", description = "会员注册课程日期")

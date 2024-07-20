@@ -3,11 +3,10 @@ package com.bequre.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bequre.mapper.CourseRegistrationsMapper;
-import com.bequre.pojo.Course;
-import com.bequre.pojo.CourseRegistrations;
+import com.bequre.pojo.CourseRegistration;
 import com.bequre.pojo.PageDTO;
 import com.bequre.pojo.query.CourseRegistrationQuery;
-import com.bequre.service.CourseRegistrationsService;
+import com.bequre.service.CourseRegistrationService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -20,23 +19,23 @@ import org.springframework.stereotype.Service;
  * @since 2024-07-15
  */
 @Service
-public class CourseRegistrationsServiceImpl extends ServiceImpl<CourseRegistrationsMapper, CourseRegistrations> implements CourseRegistrationsService {
+public class CourseRegistrationServiceImpl extends ServiceImpl<CourseRegistrationsMapper, CourseRegistration> implements CourseRegistrationService {
 
     /**
      * 课程报名分页条件查询
      * @param query
      * @return
      */
-    public PageDTO<CourseRegistrations> queryCourseRegistrationPage(CourseRegistrationQuery query) {
+    public PageDTO<CourseRegistration> queryCourseRegistrationPage(CourseRegistrationQuery query) {
         //1. 构建分页条件
-        Page<CourseRegistrations> p = query.toMpPage();
+        Page<CourseRegistration> p = query.toMpPage();
 
         //2. 分页条件查询
         Integer courseId = query.getCourseId();
         Integer memberId = query.getMemberId();
-        Page<CourseRegistrations> page = lambdaQuery()
-                .eq(courseId != null, CourseRegistrations::getCourseId, courseId)
-                .eq(memberId != null, CourseRegistrations::getMemberId, memberId)
+        Page<CourseRegistration> page = lambdaQuery()
+                .eq(courseId != null, CourseRegistration::getCourseId, courseId)
+                .eq(memberId != null, CourseRegistration::getMemberId, memberId)
                 .page(p);
 
         //3. 封装分页结果

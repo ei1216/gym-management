@@ -12,7 +12,7 @@ public class CourseRegistrationQuery extends PageQuery{
     @Schema(name = "courseId", description = "课程id")
     private Integer courseId;
 
-    @Schema(name = "memberId", description = "会员id")
-    private Integer memberId;
+//    @Schema(name = "memberId", description = "会员id")
+//    private Integer memberId;
 
 }

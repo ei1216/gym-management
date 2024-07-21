@@ -1,5 +1,7 @@
 # gym-management
-提供健身房的基础管理功能
+提供健身房的基础管理功能。
+
+整个系统采用SpringBoot3+Vue3+TypeScript构建，涉及的技术栈包括MySQL、Redis、MybatisPlus、JWT。 
 
 
 

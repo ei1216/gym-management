@@ -35,7 +35,7 @@ public class CourseRegistrationServiceImpl extends ServiceImpl<CourseRegistratio
         //Integer memberId = query.getMemberId();
         Page<CourseRegistration> page = lambdaQuery()
                 .eq(courseId != null, CourseRegistration::getCourseId, courseId)
-                .eq(memberId != null, CourseRegistration::getMemberId, memberId)
+//                .eq(memberId != null, CourseRegistration::getMemberId, memberId)
                 .page(p);
 
         //3. 封装分页结果
